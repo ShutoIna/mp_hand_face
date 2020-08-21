@@ -6,9 +6,14 @@ Mediapipeを用いた顔(メッシュ状)及び手の3D座標の取得方法
 
 映像からフレームごとに顔や手を認識して各点の座標をとり，CSVファイルとして保存していきます．
 
-### 1. [Mediapipe](https://github.com/google/mediapipe)を自分のパソコンにclone
+＊これはmacbook pro 16inch 2019 で行ったものです．Windows版では多少の違いがあるかもしれません．
 
-Mediapipeの使い方に関しては，[このサイト](https://note.com/npaka/n/n5008f82c43cc)などを活用すると良いと思います．
+＊また，これはリアルタイム映像ではなく，すでに記録した映像で行っています．
+
+### 1. [Mediapipe](https://github.com/google/mediapipe)を自分のパソコンにcloneし，環境構築を行う
+
+Mediapipeの使い方に関しては，[このサイト](https://note.com/npaka/n/n5008f82c43cc)などを活用してください．
+
 
 ### 2. 対象のファイルをcloneしたフォルダ内の以下に説明するディレクトリに追加or置き換えを行ってください．
 (追加)
