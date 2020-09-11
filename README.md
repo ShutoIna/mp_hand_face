@@ -36,18 +36,18 @@ hand_landmark_cpu.pbtxt → /mediapipe/mediapipe/graphs/hand_tracking/subgraphs/
 
 
 ### 3. 手の座標取得の場合は以下のコマンドを入力してください
+```
+$ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/multi_hand_tracking:multi_hand_tracking_cpu
 
-bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/multi_hand_tracking:multi_hand_tracking_cpu
-
-export GLOG_logtostderr=1
+$ export GLOG_logtostderr=1
 bazel-bin/mediapipe/examples/desktop/multi_hand_tracking/multi_hand_tracking_cpu --input_video_path=(入力するvideoのpath)
-
+```
 の順にターミナルに入力すると，/mediapipe/test_hand.csv　ができると思います．
 
 ### 4. 顔の座標取得の場合は以下のコマンドを入力してください
+```
+$ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/face_mesh:face_mesh_cpu
 
-bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/face_mesh:face_mesh_cpu
-
-GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath)
-
+$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath)
+```
 の順にターミナルに入力すると，/mediapipe/test_face.csv　ができると思います．
