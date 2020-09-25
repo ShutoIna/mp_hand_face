@@ -54,6 +54,7 @@ $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop
 
 $ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath)
 ```
+の順にターミナルに入力すると，/mediapipe/test_hand.csv　ができると思います．
 
 ### 4. 上半身の座標取得の場合は以下のコマンドを入力してください
 ```
