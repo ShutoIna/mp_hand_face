@@ -20,7 +20,8 @@ Mediapipeの使い方に関しては，[このサイト](https://note.com/npaka/
 
 demo_run_graph_main_face.cc , demo_run_graph_main_hand.cc demo_run_graph_main_pose.cc→ /mediapipe/mediapipe/examples/desktop
 
-hand_landmark_3d.tflite → /mediapipe/mediapipe/models
+(hand_landmark_3d.tflite → /mediapipe/mediapipe/models) 
+→(追記@9/25 このファイルは追加しなくても大丈夫です．)
 
 (置き換え)
 
