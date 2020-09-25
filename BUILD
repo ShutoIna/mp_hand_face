@@ -59,6 +59,8 @@ cc_library(
         "//mediapipe/framework/port:status",
         "//mediapipe/graphs/hand_tracking:multi_hand_desktop_tflite_calculators",
 	"//mediapipe/graphs/face_mesh:desktop_live_calculators",
+        "//mediapipe/graphs/face_detection:desktop_tflite_calculators",
+
 
     ],
 )
@@ -82,8 +84,43 @@ cc_library(
 
     ],
 )
+cc_library(
+    name = "demo_run_graph_main_pose",
+    srcs = ["demo_run_graph_main_pose.cc"],
+    deps = [
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:image_frame",
+        "//mediapipe/framework/formats:image_frame_opencv",
+        "//mediapipe/framework/port:commandlineflags",
+        "//mediapipe/framework/port:file_helpers",
+        "//mediapipe/framework/port:opencv_highgui",
+        "//mediapipe/framework/port:opencv_imgproc",
+        "//mediapipe/framework/port:opencv_video",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/graphs/hand_tracking:multi_hand_desktop_tflite_calculators",
+	"//mediapipe/graphs/face_mesh:desktop_live_calculators",
+	"//mediapipe/graphs/pose_tracking:upper_body_pose_tracking_cpu_deps",
 
+    ],
+)
 
+cc_library(
+    name = "demo_run_graph_main",
+    srcs = ["demo_run_graph_main.cc"],
+    deps = [
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/formats:image_frame",
+        "//mediapipe/framework/formats:image_frame_opencv",
+        "//mediapipe/framework/port:commandlineflags",
+        "//mediapipe/framework/port:file_helpers",
+        "//mediapipe/framework/port:opencv_highgui",
+        "//mediapipe/framework/port:opencv_imgproc",
+        "//mediapipe/framework/port:opencv_video",
+        "//mediapipe/framework/port:parse_text_proto",
+        "//mediapipe/framework/port:status",
+    ],
+)
 
 # Linux only.
 # Must have a GPU with EGL support:
