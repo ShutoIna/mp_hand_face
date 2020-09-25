@@ -1,6 +1,6 @@
 Mediapipeを用いた顔(メッシュ状)及び手の3D座標の取得方法
 
-以下では，[Mediapipe](https://github.com/google/mediapipe)を用いた顔と手の座標の取得方法
+以下では，[Mediapipe](https://github.com/google/mediapipe)を用いた顔と手と上半身の座標の取得方法
 について説明します．
 
 
@@ -18,7 +18,7 @@ Mediapipeの使い方に関しては，[このサイト](https://note.com/npaka/
 ### 2. 対象のファイルをcloneしたフォルダ内の以下に説明するディレクトリに追加or置き換えを行ってください．
 (追加)
 
-demo_run_graph_main_face.cc , demo_run_graph_main_hand.cc → /mediapipe/mediapipe/examples/desktop
+demo_run_graph_main_face.cc , demo_run_graph_main_hand.cc demo_run_graph_main_pose.cc→ /mediapipe/mediapipe/examples/desktop
 
 hand_landmark_3d.tflite → /mediapipe/mediapipe/models
 
@@ -28,7 +28,11 @@ BUILD → /mediapipe/mediapipe/examples/desktop/BUILD
 
 BUILD_hand → /mediapipe/mediapipe/examples/desktop/multi_hand_tracking/BUILD
 
-BUILD_face → /mediapipe/mediapipe/examples/desktop/face_mesh/BUILD
+BUILD_face → /mediapipe/mediapipe/examples/desktop/face_mesh/BUILD 
+
+BUILD_pose → /mediapipe/mediapipe/examples/desktop/upper_body_pose_tracking/BUILD 
+
+
 
 BUILD_handとBUILD_faceに関しては，置き換えた後にBUILDという名前にしてください
 
@@ -50,4 +54,11 @@ $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop
 
 $ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath)
 ```
-の順にターミナルに入力すると，/mediapipe/test_face.csv　ができると思います．
+
+### 4. 上半身の座標取得の場合は以下のコマンドを入力してください
+```
+$ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/upper_body_pose_tracking:upper_body_pose_tracking_cpu
+
+$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/upper_body_pose_tracking/upper_body_pose_tracking_cpu --input_video_path=(入力するvideoのpath)
+```
+の順にターミナルに入力すると，/mediapipe/test_pose.csv　ができると思います．
