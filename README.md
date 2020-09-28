@@ -65,7 +65,7 @@ $ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/upper_body_pose_tracki
 ```
 の順にターミナルに入力すると，/mediapipe/test_pose.csv　ができると思います.  
 
-####未編集状態のリアルタイム&録画映像(座標取得はできない)  
+#### 未編集状態のリアルタイム&録画映像(座標取得はできない)  
 
 GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu \
 --calculator_graph_config_file=mediapipe/graphs/face_mesh/face_mesh_desktop_live.pbtxt  
