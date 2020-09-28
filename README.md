@@ -37,15 +37,15 @@ BUILD_pose → /mediapipe/mediapipe/examples/desktop/upper_body_pose_tracking/BU
 
 BUILD_handとBUILD_faceに関しては，置き換えた後にBUILDという名前にしてください
 
-hand_landmark_cpu.pbtxt → /mediapipe/mediapipe/graphs/hand_tracking/subgraphs/
-
+hand_landmark_cpu.pbtxt → /mediapipe/mediapipe/graphs/hand_tracking/subgraphs/  
+(追記@9/28 このファイルは置換えないでください．)
 
 ### 3. 手の座標取得の場合は以下のコマンドを入力してください
 ```
 $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/multi_hand_tracking:multi_hand_tracking_cpu
 
 $ export GLOG_logtostderr=1
-bazel-bin/mediapipe/examples/desktop/multi_hand_tracking/multi_hand_tracking_cpu --input_video_path=(入力するvideoのpath)
+bazel-bin/mediapipe/examples/desktop/multi_hand_tracking/multi_hand_tracking_cpu --input_video_path=(入力するvideoのpath) --output_video_path=(出力するvideoのpath)
 ```
 の順にターミナルに入力すると，/mediapipe/test_hand.csv　ができると思います．
 
@@ -53,7 +53,7 @@ bazel-bin/mediapipe/examples/desktop/multi_hand_tracking/multi_hand_tracking_cpu
 ```
 $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/face_mesh:face_mesh_cpu
 
-$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath)
+$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu --input_video_path=(入力するvideoのpath) --output_video_path=(出力するvideoのpath)
 ```
 の順にターミナルに入力すると，/mediapipe/test_hand.csv　ができると思います．
 
@@ -61,6 +61,10 @@ $ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cp
 ```
 $ bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/upper_body_pose_tracking:upper_body_pose_tracking_cpu
 
-$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/upper_body_pose_tracking/upper_body_pose_tracking_cpu --input_video_path=(入力するvideoのpath)
+$ GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/upper_body_pose_tracking/upper_body_pose_tracking_cpu --input_video_path=(入力するvideoのpath) --output_video_path=(出力するvideoのpath)
 ```
-の順にターミナルに入力すると，/mediapipe/test_pose.csv　ができると思います．
+の順にターミナルに入力すると，/mediapipe/test_pose.csv　ができると思います.  
+
+####
+GLOG_logtostderr=1 bazel-bin/mediapipe/examples/desktop/face_mesh/face_mesh_cpu \
+--calculator_graph_config_file=mediapipe/graphs/face_mesh/face_mesh_desktop_live.pbtxt (--input_video_path=... --output_video_path=... )
