@@ -12,6 +12,8 @@ Mediapipeを用いた顔(メッシュ状)及び手の3D座標の取得方法
 
 ### 1. [Mediapipe](https://github.com/google/mediapipe)を自分のパソコンにcloneし，環境構築を行う
 
+環境構築の方法は，[公式のドキュメント](https://google.github.io/mediapipe/getting_started/getting_started.html)に記載されている方法に従って進めて下さい．
+
 Mediapipeの使い方に関しては，[このサイト](https://note.com/npaka/n/n5008f82c43cc)などを活用してください．
 
 
@@ -35,7 +37,7 @@ BUILD_pose → /mediapipe/mediapipe/examples/desktop/upper_body_pose_tracking/BU
 
 
 
-BUILD_handとBUILD_faceに関しては，置き換えた後にBUILDという名前にしてください
+BUILD_handとBUILD_face，BUILD_poseに関しては，置き換えた後にBUILDという名前に戻してください
 
 hand_landmark_cpu.pbtxt → /mediapipe/mediapipe/graphs/hand_tracking/subgraphs/  
 (追記@9/28 このファイルは置換えないでください．)
