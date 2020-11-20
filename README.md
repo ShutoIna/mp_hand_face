@@ -13,8 +13,9 @@ Mediapipeを用いた顔(メッシュ状)及び手の3D座標の取得方法
 ＊また，これはリアルタイム映像ではなく，すでに記録した映像で行っています．
 
 (追記@11/20)  
-mediapipeの最新バージョンでは，hand trackingにおいて，multi hand tracking のフォルダがなくなりました．  (これにより，handフォルダに両手のトラッキングが統合されたと思われます．) 
-  この変更により，handに関するファイルが正常に動作しなくなったので，現在修正中です．
+mediapipeの最新バージョンでは，hand trackingにおいて，multi hand tracking のフォルダがなくなりました．  
+(これにより，handフォルダに両手のトラッキングが統合されたと思われます．)  
+この変更により，handに関するファイルが正常に動作しなくなったので，現在修正中です．
 
 ### 1. [Mediapipe](https://github.com/google/mediapipe)を自分のパソコンにcloneし，環境構築を行う
 
